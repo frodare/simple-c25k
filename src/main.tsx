@@ -4,18 +4,13 @@ import App from './App.tsx'
 import './index.css'
 
 /*
-- get the PWA working
-- figure how to deploy to github pages
 - data structure to hold schedule
 - redux store (play with the new redux stuff)
 - create github repo to save files
 - excalidraw to draw out the UI, save locally
 
-
-
-
-
-
+Notes
+https://medium.com/@aishwaryaparab1/deploying-vite-deploying-vite-app-to-github-pages-166fff40ffd3
 */
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
