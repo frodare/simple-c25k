@@ -2,10 +2,20 @@ import { configureStore } from '@reduxjs/toolkit'
 import activitySlice from '../features/activity/activitySlice';
 import { useDispatch, useSelector } from 'react-redux'
 import type { TypedUseSelectorHook } from 'react-redux'
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+const persistedActivitySlice = persistReducer(persistConfig, activitySlice)
+
 
 const store = configureStore({
   reducer: {
-    activity: activitySlice,
+    activity: persistedActivitySlice,
   }
 });
 
@@ -21,3 +31,5 @@ export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
 export default store;
+
+export const persistor = persistStore(store)

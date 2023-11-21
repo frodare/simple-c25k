@@ -1,20 +1,19 @@
 import { pause } from "../features/activity/activitySlice";
 import { useAppDispatch, useAppSelector } from "../store";
+import { TfiControlPause, TfiControlPlay } from "react-icons/tfi";
+import Button from "./Button";
 
-const PauseButton = () => {
+const ButtonPause = () => {
   const isPaused = useAppSelector((state) => state.activity.pausedOn !== null);
   const dispatch = useAppDispatch();
   const label = isPaused ? 'Resume' : 'Pause';
+  const icon = isPaused ? TfiControlPlay : TfiControlPause;
 
   const onClick = () => {
     dispatch(pause(Date.now()));
-  }
+  };
 
-  return (
-    <button onClick={onClick}>
-      {label}
-    </button>
-  );
+  return <Button onClick={onClick} label={label} icon={icon} />
 }
 
-export default PauseButton;
+export default ButtonPause;
