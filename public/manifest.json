@@ -1,8 +1,8 @@
 {
 	"name": "Simple C25K",
 	"short_name": "Simple C25K",
-	"start_url": "./?home=true",
-	"scope": "./",
+	"start_url": "/simple-c25k/?home=true",
+	"scope": "/simple-c25k/",
 	"icons": [
 		{
 			"src": "icons/manifest-icon-192.maskable.png",
