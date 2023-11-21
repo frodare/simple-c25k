@@ -1,20 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import App from './components/App.tsx'
 import './index.css'
+import { Provider } from 'react-redux'
+import store from './store/index.ts'
 
 /*
-- data structure to hold schedule
-- redux store (play with the new redux stuff)
-- create github repo to save files
-- excalidraw to draw out the UI, save locally
-
-Notes
-https://medium.com/@aishwaryaparab1/deploying-vite-deploying-vite-app-to-github-pages-166fff40ffd3
+- title bar
+- start state
+- replay button
+- lock button
+- keep screen active
+- can we trigger an alarm sound / vibration?
+- install linter
+- web storage to save state
 */
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
 )
