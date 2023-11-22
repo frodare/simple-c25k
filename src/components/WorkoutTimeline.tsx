@@ -37,7 +37,7 @@ const WorkoutTimeline: FC = () => {
   const completion = useAppSelector(completionSelector);
   console.log({ elapsed, totalDuration, completion});
   return (
-    <div className='flex h-full relative flex-row shadow-lg'>
+    <div className='flex opacity-90 h-full relative flex-row shadow-lg'>
       {intervals.map((interval, index) =>
         <IntervalTimelineItem key={index} interval={interval} percentage={intervalPercentages[index]} />
       )}

@@ -11,7 +11,7 @@ function App() {
   useClock();
   useHandleCompletion();
   return (
-    <>
+    <div className="bg-cover h-screen" style={{ backgroundImage: "url('background.jpg')" }}>
       <CurrentWorkout />
       <div className="flex content-center h-12">
         <ButtonNextWorkout step={-1} />
@@ -26,7 +26,7 @@ function App() {
         <ButtonPause />
         <ButtonNextInterval step={1} />
       </div>
-    </>
+    </div >
   )
 }
 
