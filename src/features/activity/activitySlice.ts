@@ -71,7 +71,12 @@ export const activitySlice = createSlice({
       state.now = action.payload.now;
     },
     pause: (state, action: PayloadAction<number>) => {
-      if (state.start === null) return;
+      if (state.start === null) {
+        state.start = action.payload;
+        state.pausedOn = null;
+        state.now = action.payload;
+        return; 
+      }
       state.now = action.payload;
       if (state.pausedOn === null) {
         state.pausedOn = action.payload;

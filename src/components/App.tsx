@@ -5,9 +5,11 @@ import CurrentInterval from "./CurrentInterval";
 import ButtonNextWorkout from "./ButtonNextWorkout";
 import ButtonNextInterval from "./ButtonNextInterval";
 import CurrentWorkout from "./CurrentWorkout";
+import useHandleCompletion from "../hooks/useHandleCompletion";
 
 function App() {
   useClock();
+  useHandleCompletion();
   return (
     <>
       <CurrentWorkout />

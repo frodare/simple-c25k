@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import type { TypedUseSelectorHook } from 'react-redux'
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
 
 const persistConfig = {
   key: 'root',
@@ -12,11 +13,11 @@ const persistConfig = {
 
 const persistedActivitySlice = persistReducer(persistConfig, activitySlice)
 
-
 const store = configureStore({
   reducer: {
     activity: persistedActivitySlice,
-  }
+  },
+  middleware: [thunk],
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
