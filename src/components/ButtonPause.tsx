@@ -13,10 +13,11 @@ const ButtonPause = () => {
   const icon = isPaused ? TfiControlPlay : TfiControlPause;
 
   const onClick = () => {
+    navigator.vibrate(1000);
     dispatch(pause(Date.now()));
   };
 
-  return <Button onClick={onClick} label={label} icon={icon} />
+  return <Button onClick={onClick} label={label} icon={icon} />;
 }
 
 export default ButtonPause;

@@ -31,11 +31,9 @@ const completionSelector = createSelector(elapsedTimeSelector, totalDurationSele
 
 const WorkoutTimeline: FC = () => {
   const intervals = useAppSelector(intervalsSelector);
-  const elapsed = useAppSelector(elapsedTimeSelector);
   const totalDuration = intervals.reduce((acc, interval) => acc + interval.duration, 0);
   const intervalPercentages = intervals.map((interval) => interval.duration / totalDuration);
   const completion = useAppSelector(completionSelector);
-  console.log({ elapsed, totalDuration, completion});
   return (
     <div className='flex opacity-90 h-full relative flex-row shadow-lg'>
       {intervals.map((interval, index) =>
