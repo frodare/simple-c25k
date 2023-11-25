@@ -7,15 +7,9 @@ import store from './store/index.ts'
 import AudioProvider from './components/AudioProvider.tsx'
 
 /*
-- current status (paused, running, etc)
-- bigger font
-- prevent screen lock
-- BUG: when paused, navigating to first interval and starting puts you at a negative time
+- settings (lock screen, enable sound/vibration)
 - BUG: going to prev interval, when it will be the first, should reset to 0, or there should be a reset?
 - add install button
-- add a background image
-- keep screen active
-- prevent screen rotation
 - warning modals before resetting state
 - start state
 - warmup / cooldownhttps://www.reddit.com/r/PWA/comments/xojew1/subfolders_pwa/

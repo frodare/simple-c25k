@@ -1,5 +1,5 @@
 import { useInterval } from "usehooks-ts";
-import { tick } from "../features/activity/activitySlice";
+import { tick } from "../store/slices/activity";
 import { RootState, useAppDispatch, useAppSelector } from "../store";
 
 const REFRESH_DELAY = 1000;

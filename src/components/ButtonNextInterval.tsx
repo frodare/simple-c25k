@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { pause, setStart } from "../features/activity/activitySlice";
+import { pause, setStart } from "../store/slices/activity";
 import useNextInterval from "../hooks/useNextInterval";
 import { useAppDispatch, useAppSelector } from "../store";
 import Button from "./Button";

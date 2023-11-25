@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { setWorkout } from "../features/activity/activitySlice";
+import { setWorkout } from "../store/slices/activity";
 import useNextWorkout from "../hooks/useNextWorkout";
 import { useAppDispatch } from "../store";
 import { TfiControlForward, TfiControlBackward } from "react-icons/tfi";

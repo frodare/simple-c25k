@@ -1,4 +1,4 @@
-import { pause } from "../features/activity/activitySlice";
+import { pause } from "../store/slices/activity";
 import { RootState, useAppDispatch, useAppSelector } from "../store";
 import { TfiControlPause, TfiControlPlay } from "react-icons/tfi";
 import Button from "./Button";

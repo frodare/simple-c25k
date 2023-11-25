@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { reset, setWorkout } from "../features/activity/activitySlice";
+import { pause, reset, setStart, setWorkout } from "../store/slices/activity";
 import { useAppDispatch, useAppSelector } from "../store";
 import elapsedTimeSelector from "../store/selectors/elapsedTimeSelector";
 import totalDurationSelector from "../store/selectors/totalDurationSelector";
@@ -15,8 +15,14 @@ const useHandleCompletion = (): void => {
   const next = useNextWorkout(1);
   const lastWorkout = workouts[workouts.length - 1];
   const { play } = useContext(AudioContext);
-  navigator.vibrate([300, 200, 300]);
-  
+  if (elapsed < 0) {
+    const now = Date.now();
+    dispatch(pause(now));
+    dispatch(setStart({
+      start: now,
+      now,
+    }));
+  }
   if (elapsed >= totalDuration) {
     dispatch(reset());
     if (next) {

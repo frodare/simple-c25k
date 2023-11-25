@@ -1,16 +1,16 @@
 import { useContext, useEffect, useRef } from "react";
 import AudioContext from "../components/AudioContext";
-import { RootState, useAppSelector } from "../store";
+import { useAppSelector } from "../store";
 import intervalSelector from "../store/selectors/intervalSelector";
 import { ComputedInterval } from "../store/selectors/intervalsSelector";
-
-const isPlayingSelector = (state: RootState) => state.activity.start && !state.activity.pausedOn;
+import isActiveSelector from "../store/selectors/isActiveSelector";
 
 const useNotifyIntervalChanges = (): void => {
   const { play } = useContext(AudioContext);
   const interval = useAppSelector(intervalSelector);
   const lastIntervalRef = useRef<ComputedInterval | null>(null);
-  const isPlaying = useAppSelector(isPlayingSelector);
+  const lastIntervalCountRef = useRef(0);
+  const isActive = useAppSelector(isActiveSelector);
 
   const notify = () => {
     play('startInterval');
@@ -19,12 +19,19 @@ const useNotifyIntervalChanges = (): void => {
   
   useEffect(() => {
     if (!interval) return;
-    if (!isPlaying) return;
+    if (!isActive) {
+      lastIntervalCountRef.current = 0;
+      return;
+    }
     const lastInterval = lastIntervalRef.current;
     if (lastInterval && lastInterval.index !== interval.index) {
-      notify();
+      if (lastIntervalCountRef.current > 4) {
+        notify();
+      }
+      lastIntervalCountRef.current = 0;
     }
     lastIntervalRef.current = interval;
+    lastIntervalCountRef.current = lastIntervalCountRef.current + 1;
   });
 };
 
