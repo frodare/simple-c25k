@@ -15,7 +15,8 @@ const useHandleCompletion = (): void => {
   const next = useNextWorkout(1);
   const lastWorkout = workouts[workouts.length - 1];
   const { play } = useContext(AudioContext);
-
+  navigator.vibrate([300, 200, 300]);
+  
   if (elapsed >= totalDuration) {
     dispatch(reset());
     if (next) {

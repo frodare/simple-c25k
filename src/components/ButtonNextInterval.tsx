@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { setStart } from "../features/activity/activitySlice";
+import { pause, setStart } from "../features/activity/activitySlice";
 import useNextInterval from "../hooks/useNextInterval";
-import { useAppDispatch } from "../store";
+import { useAppDispatch, useAppSelector } from "../store";
 import Button from "./Button";
 import { TfiAngleLeft, TfiAngleRight } from "react-icons/tfi";
 
@@ -12,10 +12,13 @@ interface Props {
 const ButtonNextInterval: FC<Props> = ({ step }) => {
   const dispatch = useAppDispatch();
   const nextInterval = useNextInterval(step);
+  const isPaused = useAppSelector((state) => !!state.activity.pausedOn);
 
   const onClick = () => {
     if (!nextInterval) return;
     const now = Date.now();
+
+    if (!isPaused) dispatch(pause(now));
     dispatch(setStart({
       start: now - nextInterval.start,
       now,
