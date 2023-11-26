@@ -6,7 +6,7 @@ A simple running interval timer inspired by the Couch to 5K program.
 
 ## Install
 
-This app is not currently in any of the app stores, but it can simply be installed with supported browsers by visiting https://www.frodare.com/simple-c25k/ and clicking the install button <img width='20' src='docs/install-button.png'>.
+This app is not currently in any of the app stores, but it can simply be installed with supported browser by visiting https://www.frodare.com/simple-c25k/ and clicking the install button <img width='20' src='docs/install-button.png'>.
 
 Detailed install instructions can be found [here](https://support.google.com/chrome/answer/9658361?hl=en&co=GENIE.Platform%3DDesktop).
 
@@ -23,7 +23,7 @@ Detailed install instructions can be found [here](https://support.google.com/chr
 
 ## But why?
 I primarily built this as an experiment with Vite and PWAs.
-That being said, in the past, I had difficulty finding the C25K app I wanted. I was searching for a quick and simple interval timer app for C25K, without unnecessary features, paywalls, or annoying ads. Unfortunately, the most popular apps were overly bloated. The worst part was that many of them had some kind of paywall after the first week, even for a simple timer app.
+That being said, in the past, I had difficulty finding the C25K app I wanted. I was searching for a quick and simple interval timer app for C25K, without unnecessary features, paywalls, or annoying ads. Unfortunately, the most popular apps were overly bloated. The worst part was that many of them had some kind of paywall after the first week.
 
 ## Experimentation
 While this is a functional C25K application, it was primarily developed as a testbed to explore technologies that I have been interested in but haven't had the opportunity to work with.
