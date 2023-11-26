@@ -8,6 +8,7 @@ import AudioProvider from './components/AudioProvider.tsx'
 
 /*
 TODO:
+- disable text highlighting during long press
 - settings (lock screen, enable sound/vibration)
 - add version?
 - add install button

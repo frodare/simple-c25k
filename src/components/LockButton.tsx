@@ -11,13 +11,12 @@ const LockButton: FC = () => {
 
   const onCompletion = () => {
     if (!changing) return;
-    navigator.vibrate([200, 200, 200]);
+    navigator.vibrate([100, 100, 100]);
     setChanging(false);
     dispatch(setLocked(!locked));
   }
 
   const onMouseDown = () => {
-    navigator.vibrate(100);
     setChanging(true);
   }
 
