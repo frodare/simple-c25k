@@ -8,6 +8,7 @@ export interface ActivityState {
   start: number | null;
   pausedOn: number | null;
   now: number | null;
+  locked: boolean;
 }
 
 const initialState: ActivityState = {
@@ -16,7 +17,8 @@ const initialState: ActivityState = {
   day: 0,
   now: null,
   start: new Date().getTime() - 0,
-  pausedOn: null
+  pausedOn: null,
+  locked: false
 }
 
 interface SetWorkoutPayload {
@@ -75,6 +77,9 @@ const activity = createSlice({
     },
     tick: (state, action: PayloadAction<number>) => {
       state.now = action.payload;
+    },
+    setLocked: (state, action: PayloadAction<boolean>) => {
+      state.locked = action.payload;
     }
   }
 });
@@ -85,7 +90,8 @@ export const {
   pause,
   reset,
   setWorkout,
-  tick 
+  tick,
+  setLocked
 } = activity.actions
 
 export default activity;

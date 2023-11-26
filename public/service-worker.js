@@ -5,9 +5,7 @@ importScripts(
 
 workbox.routing.registerRoute(
   ({ request }) => {
-    // return true;
     return request.destination === 'image' || request.destination === 'audio';
   },
-  // new workbox.strategies.CacheFirst()
-  new workbox.strategies.NetworkFirst()
+  new workbox.strategies.CacheFirst()
 );

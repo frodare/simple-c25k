@@ -1,4 +1,4 @@
-type IntervalType = 'run' | 'walk';
+type IntervalType = 'run' | 'walk' | 'warmup' | 'cooldown';
 
 interface Interval {
   type: IntervalType;
@@ -63,6 +63,107 @@ const WEEK4_WORKOUT: Workout = {
   }]
 };
 
+const WEEK5_WORKOUT_1: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 6 * 60
+  }, {
+    type: 'walk',
+    duration: 3 * 60
+  },
+  {
+    type: 'run',
+    duration: 6 * 60
+  }]
+};
+
+const WEEK5_WORKOUT_2: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 8 * 60
+  }, {
+    type: 'walk',
+    duration: 5 * 60
+  },
+  {
+    type: 'run',
+    duration: 8 * 60
+  }]
+};
+
+
+const WEEK6_WORKOUT_1: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 5 * 60
+  }, {
+    type: 'walk',
+    duration: 3 * 60
+  },
+  {
+    type: 'run',
+    duration: 8 * 60
+  }, {
+    type: 'walk',
+    duration: 3 * 60
+  },
+  {
+    type: 'run',
+    duration: 5 * 60
+  }]
+};
+
+const WEEK6_WORKOUT_2: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 10 * 60
+  }, {
+    type: 'walk',
+    duration: 3 * 60
+  },
+  {
+    type: 'run',
+    duration: 10 * 60
+  }]
+};
+
+const RUN_20: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 20 * 60
+  }]
+};
+
+const RUN_25: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 25 * 60
+  }]
+};
+
+const RUN_28: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 28 * 60
+  }]
+};
+
+const RUN_30: Workout = {
+  repeat: 1,
+  intervals: [{
+    type: 'run',
+    duration: 30 * 60
+  }]
+};
+
+
 
 
 const routines: Routine[] = [{
@@ -74,6 +175,11 @@ const routines: Routine[] = [{
     [WEEK2_WORKOUT,WEEK2_WORKOUT,WEEK2_WORKOUT],
     [WEEK3_WORKOUT,WEEK3_WORKOUT,WEEK3_WORKOUT],
     [WEEK4_WORKOUT,WEEK4_WORKOUT,WEEK4_WORKOUT],
+    [WEEK5_WORKOUT_1, WEEK5_WORKOUT_2, RUN_20],
+    [WEEK6_WORKOUT_1, WEEK6_WORKOUT_2, RUN_25],
+    [RUN_25, RUN_25, RUN_25],
+    [RUN_28, RUN_28, RUN_28],
+    [RUN_30, RUN_30, RUN_30],
   ]
 }];
 

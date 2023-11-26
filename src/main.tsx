@@ -7,15 +7,13 @@ import store from './store/index.ts'
 import AudioProvider from './components/AudioProvider.tsx'
 
 /*
+TODO:
 - settings (lock screen, enable sound/vibration)
-- BUG: going to prev interval, when it will be the first, should reset to 0, or there should be a reset?
+- add version?
 - add install button
 - warning modals before resetting state
 - start state
-- warmup / cooldownhttps://www.reddit.com/r/PWA/comments/xojew1/subfolders_pwa/
 - fix nav buttons
-- replay button
-- lock button
 - install linter
 - setup build pipeline
 - add more tests

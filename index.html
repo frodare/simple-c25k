@@ -11,6 +11,9 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
+      document.oncontextmenu = function() {
+        return false;
+      };
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/simple-c25k/service-worker.js");
       }

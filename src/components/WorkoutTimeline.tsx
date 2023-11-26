@@ -13,8 +13,14 @@ interface IntervalTimelineItemProps {
   percentage: number;
 }
 
+const intervalColor = (interval: Interval) => {
+  if (interval.type === 'walk') return 'bg-blue-200';
+  if (interval.type === 'run') return 'bg-blue-500';
+  return 'bg-gray-300';
+}
+
 const IntervalTimelineItem: FC<IntervalTimelineItemProps> = ({ interval, percentage }) => {
-  const color = interval.type === 'walk' ? 'bg-gray-300' : 'bg-blue-500';
+  const color = intervalColor(interval);
   return (
     <div
       className={'text-center h-full ' + color}
@@ -35,11 +41,11 @@ const WorkoutTimeline: FC = () => {
   const intervalPercentages = intervals.map((interval) => interval.duration / totalDuration);
   const completion = useAppSelector(completionSelector);
   return (
-    <div className='flex opacity-90 h-full relative flex-row shadow-lg'>
+    <div className='flex opacity-90 h-full relative flex-row'>
       {intervals.map((interval, index) =>
         <IntervalTimelineItem key={index} interval={interval} percentage={intervalPercentages[index]} />
       )}
-      <div className='absolute left-0 bottom-0 bg-gray-500 h-full opacity-70 shadow-inner' style={{ width: `${completion * 100}%` }} />
+      <div className='absolute left-0 bottom-0 bg-gray-500 h-full opacity-70' style={{ width: `${completion * 100}%` }} />
       <ElapsedDisplay className='absolute left-0 bottom-0' />
       <RemainingDisplay className='absolute right-0 bottom-0' />
     </div>

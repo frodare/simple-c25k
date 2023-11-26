@@ -1,13 +1,14 @@
-import WorkoutTimeline from "./WorkoutTimeline"
-import ButtonPause from "./ButtonPause"
-import useClock from "../hooks/useClock"
-import CurrentInterval from "./CurrentInterval";
-import ButtonNextWorkout from "./ButtonNextWorkout";
-import ButtonNextInterval from "./ButtonNextInterval";
-import CurrentWorkout from "./CurrentWorkout";
+import useClock from "../hooks/useClock";
 import useHandleCompletion from "../hooks/useHandleCompletion";
 import useNotifyIntervalChanges from "../hooks/useNotifyIntervalChanges";
 import useWakeLock from "../hooks/useWakeLock";
+import ButtonNextInterval from "./ButtonNextInterval";
+import ButtonNextWorkout from "./ButtonNextWorkout";
+import ButtonPause from "./ButtonPause";
+import CurrentInterval from "./CurrentInterval";
+import CurrentWorkout from "./CurrentWorkout";
+import LockButton from "./LockButton";
+import WorkoutTimeline from "./WorkoutTimeline";
 
 function App() {
   useClock();
@@ -25,6 +26,7 @@ function App() {
         <WorkoutTimeline />
       </div>
       <CurrentInterval />
+      <LockButton />
       <div className="flex content-center fixed bottom-0 w-full">
         <ButtonNextInterval step={-1} />
         <ButtonPause />
