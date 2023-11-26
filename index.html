@@ -6,12 +6,15 @@
     <link rel="manifest" href="manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple C25K</title>
-    <script type="module" crossorigin src="/simple-c25k/assets/index-2ii33HqQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/simple-c25k/assets/index-PI9Lx52s.css">
+    <script type="module" crossorigin src="/simple-c25k/assets/index-YUG0-Qi5.js"></script>
+    <link rel="stylesheet" crossorigin href="/simple-c25k/assets/index-IYlxhMZ3.css">
   </head>
   <body>
     <div id="root"></div>
     <script>
+      document.oncontextmenu = function() {
+        return false;
+      };
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/simple-c25k/service-worker.js");
       }
